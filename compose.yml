@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: uap
+      POSTGRES_USER: uap
+      POSTGRES_PASSWORD: uap
+    ports:
+      - "5432:5432"
+    volumes:
+      - uap-postgres:/var/lib/postgresql/data
+
+volumes:
+  uap-postgres:

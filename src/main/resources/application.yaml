@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: uap_gov
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/uap
+    username: uap
+    password: uap
+
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE

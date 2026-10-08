@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml/"
+      xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <title>Unemployed Allowance Program</title>
+</head>
+<body>
+<div>
+    <div id="two" th:each="worker: ${workers}">
+        <ul>
+            <li>
+                <span th:text=${worker.name}></span>
+                <form  method="POST" >
+                    <input id="workerId"  type="hidden" th:field="${worker.id}" />
+                    <input type="submit" value="Apply" />
+                </form>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div id="two" th:each="application: ${applications}">
+    <ul>
+        <li>
+            <span th:text=${name}></span>
+            <form method="POST" th:object="${approve}">
+                <input id="nid"  type="hidden" th:field="*{status}" />
+                <input type="submit" value="Approve" />
+            </form>
+            <form method="POST" th:object="${reject}">
+                <div><label for="nid">Reason</label></div>
+                <input id="nid"  type="text" th:field="*{reason}" />
+                <input id="nid"  type="hidden" th:field="*{status}" />
+                <input type="submit" value="Reject" />
+            </form>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
